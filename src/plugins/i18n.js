@@ -60,7 +60,7 @@ const messages = {
 };
 
 const i18n = new VueI18n({ 
-    locale: 'pt-br', // set locale 
+    locale: 'en', // set locale 
     fallbackLocale: 'en',
     messages
 });
