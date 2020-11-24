@@ -10,7 +10,7 @@
                 class="header"
                 role="button"
                 aria-controls="contentIdForA11y2">
-                <strong>Help and shortcuts</strong>
+                <strong>Hilfe und Shortcuts</strong>
             </div>
             <div class="main">
                 <b-tabs v-model="activeTab">
