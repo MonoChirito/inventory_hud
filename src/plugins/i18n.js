@@ -4,31 +4,30 @@ Vue.use(VueI18n);
 
 const messages = {
     'en': {
-        loadout: 'Loadout',
+        loadout: 'Waffen',
         items: 'Items',
         actions: {
-            drop: 'Drop',
-            cancel: 'Cancel',
-            give: 'Give'
+            drop: 'Ablegen',
+            cancel: 'Abbrechen',
         },
         weaponInfo: {
             stats: {
-                range: 'Range',
-                accuracy: 'Accuracy',
-                ammoCapacity: 'Capacity',
-                damage: 'Damage',
-                fireRate: 'Fire rate',
+                range: 'Reichweite',
+                accuracy: 'Genaugkeit',
+                ammoCapacity: 'Kapazität',
+                damage: 'Schaden',
+                fireRate: 'Feuerrate',
             }
         },
         notifications:{
-            moreThanOneWeaponSelect: 'You can select only 1 weapon!',
-            needWeaponSelect: 'You need selected a weapon',
-            onlyWeaponCanBeBinding: 'Only weapon can be binding',
-            thisItemCannotBeGivem: 'This item cannot be gifted',
-            thereIsNoPlayersClosest: 'There no players closest to u :/',
-            thereIsNoPlayersSelected: 'There no players selected to u :/',
-            youAlreadyHaveAWeaponWhitThisBind: 'You already have a weapon with this bind number',
-            areYouSure: 'Are you sure you want to <b>drop</b> your weapon? This action cannot be undone.'
+            moreThanOneWeaponSelect: 'Du kannst nur 1 Waffe auswählen!',
+            needWeaponSelect: 'Du musst eine Waffe auswählen',
+            onlyWeaponCanBeBinding: 'Es können nur Waffen auf Quick Switch gelegt werden!',
+            thisItemCannotBeGivem: 'Du kannst dieses Item nicht loswerden!',
+            thereIsNoPlayersClosest: 'Es ist kein Spieler in der Nähe :/',
+            thereIsNoPlayersSelected: 'Es ist kein ausgewählter Spieler ind er Nähe :/',
+            youAlreadyHaveAWeaponWhitThisBind: 'Auf diesem Quick Switch Slot ist bereits eine Waffe',
+            areYouSure: 'Bist du sicher, dass du diese Waffe ablegen willst?'
         }
     },
     'pt-br': {
@@ -37,7 +36,6 @@ const messages = {
         actions: {
             drop: 'Dropar',
             cancel: 'Cancelar',
-            give: 'Presentear'
         },
         weaponInfo: {
             stats: {

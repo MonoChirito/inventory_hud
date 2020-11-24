@@ -9,8 +9,8 @@
         <weaponInfo v-if="showWeaponInfo" :weapon="weaponInfo"></weaponInfo>
       </div>
       <div class="personalItems">
-        <loadout :loadout="loadout" :weaponSelected="weaponInfo" @itemGived="clearPlayerGive" @weaponAsSelected="showWeaponBoxInfo" />
-        <draggable :inventory="inventory" @itemGived="clearPlayerGive" @itemWasSplited="insertInInventory" :isDrop="isDrop"  />
+        <loadout :loadout="loadout" :weaponSelected="weaponInfo" @weaponAsSelected="showWeaponBoxInfo" />
+        <draggable :inventory="inventory" @itemWasSplited="insertInInventory" :isDrop="isDrop"  />
         <help />
       </div>
     </div>
@@ -47,108 +47,13 @@ export default {
           grade_label: 'Commandant'
         }
       },
-      loadout: [{
-          label: "WEAPON_STICKYBOMB",
-          count: 1,
-          type: 'item_weapon',
-          value: "WEAPON_STICKYBOMB",
-          usable: false,
-          rare: false,
-          ammo: 100,
-          canGiveAmmo: true,
-          canRemove: true,
-          selected: false,
-          stats: {
-              damage: 100,
-              fireRate: 25,
-              ammoCapacity: 50,
-              accuracy: 75,
-              range: 96
-          }
-      },
-      {
-          label: "WEAPON_STUNGUN",
-          count: 1,
-          type: 'item_weapon',
-          value: "WEAPON_STUNGUN",
-          usable: false,
-          rare: false,
-          ammo: 100,
-          canGiveAmmo: true,
-          canRemove: true,
-          selected: false,
-          stats: {
-              damage: 100,
-              fireRate: 25,
-              ammoCapacity: 50,
-              accuracy: 75,
-              range: 96
-          }
-      },
-      {
-          label: "WEAPON_SWITCHBLADE",
-          count: 1,
-          type: 'item_weapon',
-          value: "WEAPON_SWITCHBLADE",
-          usable: false,
-          rare: false,
-          ammo: 100,
-          canGiveAmmo: true,
-          canRemove: true,
-          selected: false,
-          stats: {
-              damage: 100,
-              fireRate: 25,
-              ammoCapacity: 50,
-              accuracy: 75,
-              range: 96
-          }
-      },
-      {
-          label: "WEAPON_VINTAGEPISTOL",
-          count: 1,
-          type: 'item_weapon',
-          value: "WEAPON_VINTAGEPISTOL",
-          usable: false,
-          rare: false,
-          ammo: 100,
-          canGiveAmmo: true,
-          canRemove: true,
-          selected: false,
-          stats: {
-              damage: 100,
-              fireRate: 25,
-              ammoCapacity: 50,
-              accuracy: 75,
-              range: 96
-          }
-      },
-      {
-          label: "WEAPON_WRENCH",
-          count: 1,
-          type: 'item_weapon',
-          value: "WEAPON_WRENCH",
-          usable: false,
-          rare: false,
-          ammo: 100,
-          canGiveAmmo: true,
-          canRemove: true,
-          selected: false,
-          stats: {
-              damage: 100,
-              fireRate: 25,
-              ammoCapacity: 50,
-              accuracy: 75,
-              range: 96
-          }
-      }],
+      loadout: [],
       showInventoryHud: false,
       showWeaponInfo: false,
       weaponInfo: {},
       inventory: [],
       floor: [],
       isDrop: false,
-      playerIdSelectToGive: null,
     };
   },
   destroyed() {
@@ -173,8 +78,7 @@ export default {
         if(item.showInventoryHud === false) this.showInventoryHud = item.showInventoryHud
 
         if(item.items) this.inventory = item.items
-        if(item.weight) this.inventoryWeight = item.weight
-        
+
         if(item.user) {
           this.user = item.user
           this.loadout = item.loadout
@@ -244,9 +148,6 @@ export default {
     },
     setBindValue (data) {
       this.weaponInfo.bind = data.bind
-    },
-    clearPlayerGive () {
-      this.playerIdSelectToGive = null
     }
   },
 };

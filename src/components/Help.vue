@@ -22,7 +22,7 @@
                         </b-table>
                     </b-tab-item>
 
-                    <b-tab-item label="Weapons">
+                    <b-tab-item label="Waffen">
                         <b-table
                             :data="loadout"
                             :columns="columns"
@@ -40,28 +40,27 @@
     export default {
         data() {
             return {
-                items: [{'id': 1, 'behavior': 'When you drag and drop a item outside of your inventory canvas', 'action': 'Drop current item dragged with full count on the floor'},
-                        {'id': 2, 'behavior': 'When you drag and drop an item to your inventory screen with CTRL pressed', 'action': 'Drop current item dragged with one quantity on the floor'},
-                        {'id': 3, 'behavior': 'When you right-clicked on item', 'action': 'Use the item'},
-                        {'id': 4, 'behavior': 'When you middle-clicked on item', 'action': 'Open the "givem menu" of item, if you have players closest'},
-                        {'id': 5, 'behavior': 'When you left-clicked on gift button in "givem menu"', 'action': 'Give a item to player selected quantity as required'},
-                        {'id': 6, 'behavior': 'When you middle-clicked on item with CTRL pressed', 'action': 'Split element in two new items'},
-                        {'id': 6, 'behavior': 'When you left-clicked on gift button in givem menu', 'action': 'Split element in two new items'}],
-                loadout: [{'id': 1, 'behavior': 'When you left-clicked on weapon', 'action': 'Select de weapon and show the weapon info'},
-                         {'id': 2, 'behavior': 'When you right-clicked with CTRL pressed on weapon', 'action': 'Open the "Weapon context menu"'},
-                         {'id': 3, 'behavior': 'When you left-clicked on gift button in "Weapon menu"', 'action': 'Give a ammo to player selected quantity as required'},
-                         {'id': 4, 'behavior': 'When you press CTRL + 1 (2, 3, 4, 5) on weapon selected', 'action': 'Bind weapon on fastWeapon feature'}],
+                items: [{'id': 1, 'behavior': 'Item aus dem Inventar ziehen', 'action': 'Alle Items dieses Typs ablegen'},
+                        {'id': 2, 'behavior': 'Item aus dem Inventar ziehen + STRG', 'action': '1 Stück dieses Items ablegen'},
+                        {'id': 3, 'behavior': 'Rechtsklick auf ein Item drücken', 'action': 'Item benutzen'},
+                        {'id': 4, 'behavior': 'Mausrad auf ein ITem drücken', 'action': 'Item geben, falls ein Spieler in der Nähe ist'},
+                        {'id': 5, 'behavior': 'Linksklick auf den Geben knopf', 'action': 'Item mit der ausgewählten Anzahl geben'},
+                        {'id': 6, 'behavior': 'Mausrad auf ein Item drücken + STRG', 'action': 'Item in 2 Slots aufteilen'}],
+                loadout: [{'id': 1, 'behavior': 'Linksklick auf eine Waffe', 'action': 'Waffe auswählen und Waffeninfo anzeigen'},
+                         {'id': 2, 'behavior': 'Rechtsklick auf eine Waffe + STRG', 'action': 'Waffen Kontextmenu öffnen"'},
+                         {'id': 3, 'behavior': 'Linksklick auf "geben" im Kontextmenu', 'action': 'Munition an einen Spieler geben'},
+                         {'id': 4, 'behavior': 'STRG + 1 (2, 3, 4, 5) während eine Waffe ausgewählt ist', 'action': 'Waffe auf den Quickswitch Slot zuweisen'}],
                 isOpen: false,
                 activeTab: 0,
                 showBooks: false,
                 columns: [
                     {
                         field: 'behavior',
-                        label: 'Behavior',
+                        label: 'Verhalten',
                     },
                     {
                         field: 'action',
-                        label: 'Action',
+                        label: 'Aktion',
                     },
                 ]
 

@@ -155,7 +155,7 @@ export default {
         element.openMenu = true
     },
 
-    sendItemToPlayer (element) {
+    giveItemToPlayer (element) {
 
         if(this.playerIdSelectToGive === null) {
             this.$buefy.snackbar.open({
@@ -166,7 +166,7 @@ export default {
             })
         }
 
-        const givemItem = Player.giveItemToPlayer(this.playerIdSelectToGive, element)
+        const givemItem = Nui.sendData('esx_inventory_hud:GiveItemToAPlayer', {playerToGive: this.playerIdSelectToGive, element: element})
               givemItem.then(response => {
                 if(!response.data) {
                     this.$buefy.snackbar.open({
@@ -179,8 +179,8 @@ export default {
                     return
                 }
 
-                element.openMenu = false
-                this.$emit('itemGived', this.playerIdSelectToGive)
+                element.openMenu = true
+                this.playersClosests = response.data.playersClosest
               })
     },
 

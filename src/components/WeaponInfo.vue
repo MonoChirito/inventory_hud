@@ -46,7 +46,7 @@ export default {
     font-size: 1rem;
 
     .progress {
-        width: 13rem;
+        width: 18.5vh;
     }
 
     .progress-wrapper:not(:last-child) {
